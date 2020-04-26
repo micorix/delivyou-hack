@@ -8,6 +8,7 @@ i18n
     .use(initReactI18next)
     .init({
         fallbackLng: 'en',
+        whitelist: ['pl', 'en'],
         defaultNS: 'translation',
         debug: true,
         resources: {
