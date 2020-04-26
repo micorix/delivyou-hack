@@ -4,7 +4,7 @@ export const NEW_ORDER = 'New Order';
 
 export const SELECTED_CITY = 'Selected city:';
 
-export const SELECT_CITY = 'Select city';
+export const SELECT_CITY = 'Select a city';
 
 export const WHAT_TO_PROVIDE_YOU = 'What you want to deliver?';
 
@@ -46,7 +46,7 @@ export const ADD_CARD = 'Add card';
 
 export const PAY_BTN_TEXT = 'Pay';
 
-export const ORDER_ACCEPTED = 'You order has been accepted';
+export const ORDER_ACCEPTED = 'Your order has been accepted';
 
 export const CHOOSE = 'Select';
 
