@@ -106,12 +106,12 @@ const dates = {
     },
     en: {
         days: [
-            'Sunday 3.05',
-            'Monday 4.05',
-            'Tuesday 5.05',
-            'Wednesday 6.05',
-            'Thursday 7.05',
-            'Friday 8.05'
+            'Sunday 03/05',
+            'Monday 04/05',
+            'Tuesday 05/05',
+            'Wednesday 06/05',
+            'Thursday 07/05',
+            'Friday 08/05'
         ],
         hours: [
             "8 AM - 9 AM",
@@ -174,15 +174,15 @@ const Payment = (props: PaymentProps) => {
                     <Calc>
                         <Row>
                             <span>{t('SHOPPING_COST')}</span>
-                            <span>{formatNumber(shoppingPrice)} {currency}</span>
+                            <span>{language === 'en' && currency} {formatNumber(shoppingPrice)} {language === 'pl' && currency}</span>
                         </Row>
                         <Row>
                             <span>{t('DELIVERY_COST')}</span>
-                            <span>{formatNumber(7)} {currency}</span>
+                            <span>{language === 'en' && currency} {formatNumber(7)} {language === 'pl' && currency}</span>
                         </Row>
                         <Row>
                             <span>{t('TOTAL')}</span>
-                            <span>{formatNumber(shoppingPrice+7)} {currency}</span>
+                            <span>{language === 'en' && currency} {formatNumber(shoppingPrice+7)} {language === 'pl' && currency}</span>
                         </Row>
                     </Calc>
                 <h1>{t('PAYMENT_METHOD')}</h1>
@@ -192,7 +192,7 @@ const Payment = (props: PaymentProps) => {
                     <span className="no">**** 1234</span>
                 </CardItem>
                 <Separator text={"lub"} />
-                <AddCardButton>
+                <AddCardButton type={"button"}>
                     <span className="material-icons">add</span>
                     <span className="action">{t('ADD_CARD')}</span>
                 </AddCardButton>

@@ -51,7 +51,7 @@ export const InputAddonGroup = styled.div`
         }
     }
     span{
-        margin-left: 5px;
+        margin: 0 5px;
     }
 `;
 export const Button = styled.button`

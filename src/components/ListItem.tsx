@@ -89,6 +89,7 @@ const ListItem = (props: ListItemProps) => {
                 <Details active={props.active}>
                     <div>
                         <InputAddonGroup>
+                            {language === 'en' && <span>{currency}</span>}
                             <Input
                                 type={"number"}
                                 error={Boolean(props.error && props.error.startsWith(props.item.id) && props.error.endsWith('___price'))}
@@ -99,7 +100,8 @@ const ListItem = (props: ListItemProps) => {
                                     }
                                 }}
                                 placeholder={t('PRICE')} value={props.item.price !== 0 ? props.item.price : ''}/>
-                                <span>{currency}</span>
+
+                            {language === 'pl' && <span>{currency}</span>}
                         </InputAddonGroup>
                     </div>
                     <div>

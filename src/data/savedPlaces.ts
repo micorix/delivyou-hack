@@ -15,8 +15,8 @@ const savedPlaces: SavedPlace[] = [
         name: 'Dom',
         id: "home",
         data: {
-            recipient: 'Jan Kowalski',
-            street: 'Wiśniowa',
+            recipient: 'John Smith',
+            street: '5th Avenue',
             houseNo: 19,
             apartmentNo: 12,
             notes: ''

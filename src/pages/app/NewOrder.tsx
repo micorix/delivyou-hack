@@ -100,20 +100,20 @@ const NewOrder = (props: NewOrderProps) => {
     const [items, setItems] = useState<any[]>([...props.persistedItems]);
     const [error, setError] = useState<string | null>(null);
     const { t, i18n } = useTranslation();
-    const byId = (id: string): any => products.find((x: any) => x.id === id);
+    const byId = (id: string | null): any => products.find((x: any) => x.id === id);
     const selectCity = (city: string) => {
         setCity(city);
         props.persistCity(city);
         setModalOpen(false)
     };
-    const addItem = (e: any) => {
-        e.persist();
-        e.preventDefault();
+    const addItem = (e: any, itemID?: string) => {
+        if(e) e.preventDefault();
         if (inputValue.trim().length === 0 || items.find((x: any) => x.id === inputItemId))
                 return;
 
-        if(inputItemId){
-            const currItem = byId(inputItemId);
+        if(inputItemId || itemID){
+
+            const currItem = byId(itemID !== null && itemID !== undefined ? itemID : inputItemId);
             setItems([
                 ...items,
                 {
@@ -122,7 +122,7 @@ const NewOrder = (props: NewOrderProps) => {
                     ...currItem[i18n.language]
                 }
             ]);
-        }else{
+        }else if(itemID !== null){
             setItems([
                 ...items,
                 {
@@ -204,7 +204,9 @@ const NewOrder = (props: NewOrderProps) => {
                             userInput={inputValue}
                             onUserInputChange={setInputValue}
                             itemId={inputItemId}
-                            onSetItemId={setInputItemId}
+                            onSetItemId={(data: any) => {
+                                addItem(null, data);
+                            }}
                             error={error === '___input-add___'}
                             setError={setError}
                         />
