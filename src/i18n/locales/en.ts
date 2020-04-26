@@ -6,7 +6,7 @@ export const SELECTED_CITY = 'Selected city:';
 
 export const SELECT_CITY = 'Select a city';
 
-export const WHAT_TO_PROVIDE_YOU = 'What you want to deliver?';
+export const WHAT_TO_PROVIDE_YOU = 'What you want to receive?';
 
 export const ORDER_BTN_TEXT = 'Submit';
 
